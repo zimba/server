@@ -14,6 +14,7 @@ const concepts = [
     }
 ]
 
-app.get("/api/results", (req, res) => res.json(concepts));
+app.use(express.static('public'));
 
-app.listen(port, () => console.log(`Server running on port ${ port }`));
+app.get("/api/results", (req, res) => res.json(concepts));
+app.listen(port, () => console.log(`Server running on http://localhost:${ port }`));
